@@ -1,0 +1,16 @@
+language: node_js
+node_js:
+- '0.12'
+before_script:
+- npm install -g gulp
+script: gulp
+deploy:
+  provider: s3
+  access_key_id: AKIAJIADFCHCNWXWY2WA
+  secret_access_key:
+    secure: dHoL6L1jS5NuzQlbkbir+tTLt7TT+GtItHKWeAzxZwLGpHkOY+jqIDpG1waEIhCGsuwXcUihaLcczPsAnxum78HJugLdX82+cPBHLDhAK6o/9B5s+FFoqvpWpOc/ID0wbM4CfudGA7LB+eYzfaOt7niILtVpeNgtjRAOiCfdONE54/8v5IadH4xn4L+kiAmJXDlVIdU3XFgAlNLJa+Hg36fLVbuiodG62lu1bW2uzPmkEMWEC9N4lgzfIa1+MOKBkN5w3JKW1CtBhlDjrBDIVieK24BJppGV3Yr7c7SPJfdaXX13ZwiFppISXsdm3Dz0OdWjd672xfxS+c/STXnWknd2PidSbEc1Pngx3UFDbRPnvk7laZpy3gfdw07WYNESVSRNI/McIrsaZ2EH4Fp//Fl+iKxtydXZ8Vh531/f4A9ZC19fj1vZwnexiCyezQgdj9xwPCk7ClbHWkGMYhJDIzryXaTSOheqDPBAW4IVyamz9enPFYL4AYShL1f+PeV1dFNp9XCagXNi7sr1cW8BRR7E7mPQICWntZ4N7/+D83CgoV17Mmg65OJUDjGuWLD0Rnnnp5RhWvAhqTxQmD6OWCr3refwxbn536RF5ZET9oYRN7p+VBqdDLr35cL97xPSZ0pyzMD7/mP/Zy4gWNH4Od6Hpj81zXX8Qg1yRzwFu6g=
+  bucket: json.kmc.io
+  local-dir: dist
+  acl: public_read
+  on:
+    repo: kmctown/json.kmc.io
